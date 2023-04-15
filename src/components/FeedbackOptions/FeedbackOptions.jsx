@@ -9,7 +9,7 @@ export function FeedbackOptions({ options, onLeaveFeedback }) {
             className="feedback-button"
             type="button"
             key={option}
-            onClick={onLeaveFeedback[option + 'Click']}
+            onClick={() => onLeaveFeedback(option)}
           >
             {option}
           </button>
@@ -21,9 +21,5 @@ export function FeedbackOptions({ options, onLeaveFeedback }) {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onLeaveFeedback: PropTypes.shape({
-    goodClick: PropTypes.func.isRequired,
-    neutralClick: PropTypes.func.isRequired,
-    badClick: PropTypes.func.isRequired,
-  }).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

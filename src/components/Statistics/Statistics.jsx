@@ -1,16 +1,14 @@
 import PropTypes from 'prop-types';
 
-export function Statistics({ good, neutral, bad }) {
+export function Statistics({ good, neutral, bad, total, positive }) {
+  console.log(total);
   return (
     <ul className="statistics-list">
       <li>Good: {good}</li>
       <li>Neutral: {neutral}</li>
       <li>Bad: {bad}</li>
-      <li>Total: {Number(good + neutral + bad)}</li>
-      <li>
-        Positive feedback:{' '}
-        {Number((good * 100) / (good + neutral + bad)) || '0'}%
-      </li>
+      <li>Total: {total}</li>
+      <li>Positive feedback: {positive}%</li>
     </ul>
   );
 }
